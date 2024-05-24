@@ -447,6 +447,7 @@ const search = {
           params.append('cell_type_descendant', form.hasCellTypeSubStructure);
           params.append('anat_entity_descendant', form.hasTissueSubStructure);
           params.append('stage_descendant', form.hasDevStageSubStructure);
+          params.append('only_propagated', form.onlyPropagated);
 
           // Search form for Expression calls
           if (form?.dataQuality) {
@@ -459,9 +460,6 @@ const search = {
             form.conditionalParam2.forEach((cp) =>
               params.append('cond_param2', cp)
             );
-          }
-          if (form?.condObserved !== undefined) {
-            params.append('cond_observed', form?.condObserved);
           }
 
           // We apply the filters
