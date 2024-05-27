@@ -154,6 +154,11 @@ body.homepage {
     position: absolute !important;
     background: #000000b3 !important;
   }
+  .footer {
+    .copyright {
+      padding: 140px 0 20px;
+    }
+  }
 }
 // End separate styling of the navbar for the homepage
 
@@ -1327,7 +1332,7 @@ h1.title.in-md {
     }
   }
   .copyright {
-    padding: 140px 0 20px;
+    padding: 20px 0;
   }
 }
 
