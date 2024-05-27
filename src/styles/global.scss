@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('/fonts/HankenGrotesk-VariableFont_wght.ttf') format("truetype-variations");
+  font-weight: 1 999;
+}
+
 $size-7: 12px !default;
 $size-6: 1rem !default;
 $size-5: 1.1rem !default;
@@ -7,7 +13,6 @@ $size-4: 1.2rem !default;
 $size-3: 1.5rem !default;
 @import '../../node_modules/bulma/sass/utilities/initial-variables';
 @import '../../node_modules/bulma/sass/utilities/functions';
-@import url('https://fonts.cdnfonts.com/css/cabinet-grotesk?styles=134960,134955,134954');
 
 $archive: false;
 
@@ -32,6 +37,7 @@ $tablet: 850px;
 $desktop: 1091px;
 $widescreen: 1152px;
 $xlscreen: 1620px;
+$xxlscreen: 1800px;
 $smallestscreen: 375px; 
 
 $footer-background-color: $dark-bg-color;
@@ -124,6 +130,7 @@ $colors: map-merge($colors, $custom-colors);
       a {
         .logo-associations {
             img {
+              max-width: 130px;
               padding: 0 20px 0 0;
             }
         }
@@ -139,7 +146,7 @@ $colors: map-merge($colors, $custom-colors);
   }
 }
 
-//separate styling of the navbar for the homepage
+// Separate styling of the navbar for the homepage
 body.homepage {
   background: #F7F7F7;
   .navbar {
@@ -148,7 +155,7 @@ body.homepage {
     background: #000000b3 !important;
   }
 }
-//end separate styling of the navbar for the homepage
+// End separate styling of the navbar for the homepage
 
 .navbar-item {
   font-size: $size-5;
@@ -167,6 +174,7 @@ body.homepage {
   display: block;
 }
 
+<<<<<<< HEAD
 @media only screen and (max-width: 1300px) {
   .navbar-item {
     padding: 0 5px !important;
@@ -301,6 +309,8 @@ body.homepage {
   }
 }
 
+=======
+>>>>>>> 97f4200 (Replace font by similar styled one and self host. Fix height between card content and image. UNIL logo smaller in header.)
 .navbar-brand {
   .navbar-item {
     height: 50px !important;
@@ -317,13 +327,6 @@ body.homepage {
  * END navbar style
  */
 
-.dflex {
-  display: flex;
-}
-
-/*
- * END footer style
- */
 .notification {
   margin-bottom: 0 !important;
 }
@@ -776,26 +779,6 @@ img[src*="#tutoimgborder"] {
   border: 1px solid #363636;
 }
 
-@media only screen and (max-width: 600px) {
-  .tablet-flex-direction-column {
-    flex-direction: column-reverse !important;
-    & > * {
-      margin: 5px 0;
-    }
-  }
-}
-@media only screen and (max-width: $tablet) {
-  .section {
-    padding: 1rem 0rem;
-  }
-  #helpers-top-anat {
-    flex-direction: column;
-    & > *:not(:first-child) {
-      margin-top: 0.5rem;
-    }
-  }
-}
-
 ion-icon {
   pointer-events: none;
 }
@@ -1007,15 +990,6 @@ label.label {
   }
 }
 
-@media only screen and (max-width: $tablet) {
-  .species-grid {
-    .expression-species {
-      .image-container {
-        display: none;
-      }
-    }
-  }
-}
 .button.is-multiline {
   min-height: 2.25em;
   white-space: unset;
@@ -1044,29 +1018,6 @@ label.label {
       border-top: 1px solid $primary;
       border-bottom: 1px solid $primary;
     }
-  }
-}
-
-@media only screen and (max-width: $tablet) {
-  #home-species-wrapper .selection.fullwidth {
-    flex-direction: column !important;
-    height: auto;
-    padding: 1rem;
-    & > *:not(:first-child) {
-      margin-top: 1rem;
-    }
-  }
-  .field.has-addons {
-    flex-direction: column;
-    & a.button {
-      border-radius: 4px !important;
-    }
-  }
-}
-
-@media only screen and (min-width: $tablet) {
-  #modal .modal-card {
-    max-height: 75vh;
   }
 }
 
@@ -1110,42 +1061,6 @@ label.label {
     .head {
       .content {
         margin-left: 1rem;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: $tablet) {
-  #gene-wrapper {
-    flex-direction: column;
-    .sidebar {
-      display: none;
-      width: auto;
-      margin-right: 0;
-      .side-menu {
-        width: auto;
-        height: auto;
-
-        .side-menu-wrapper {
-          position: relative;
-          width: auto;
-
-          .menu {
-            display: none;
-          }
-        }
-      }
-    }
-
-    #gene-body {
-      margin-top: 1rem;
-      .head {
-        flex-direction: column;
-        .content {
-          margin-top: 1rem;
-          margin-left: 0;
-          justify-content: center;
-        }
       }
     }
   }
@@ -1334,17 +1249,12 @@ h1.title.in-md {
   }
 }
 
-@media screen and (min-width: 769px) {
-  .menu-modal-card {
-    margin-left: 0;
-  }
-}
-
 /********/
 /* HERO */
 /********/
 
 .home-hero-banner {
+  min-height: 705px; //prevent large content shift on load
   padding: 120px 0;
   background: rgb(204,20,20);
   background: radial-gradient(farthest-corner at 31% 55%, #e2011b 0%, #0a0e11 88%);
@@ -1359,15 +1269,8 @@ h1.title.in-md {
     }
     h1 {
       font: {
-        family: 'Cabinet Grotesk', sans-serif;
+        family: 'Hanken Grotesk', sans-serif;
         size: 2.5rem;
-      }
-    }
-    @media screen and (min-width: $xlscreen) {
-      h1 {
-        font: {
-          size: 3rem;
-        }
       }
     }
     .hero-data-columns {
@@ -1409,25 +1312,6 @@ h1.title.in-md {
   }
 }
 
-@media screen and (max-width: $desktop) {
-  .column.is-6, .column.is-6-tablet {
-    width: 100%;
-  }
-  .home-hero-banner {
-    .hero-body {
-      .gene-search {
-        display: inline-block;
-      }
-      .hero-data-columns {
-        display: flex;
-      }
-    }
-  }
-  .columns:not(.is-desktop) {
-    flex-direction: column;
-  }
-}
-
 /*********************/
 /* QUICK NAV (CARDS) */
 /*********************/
@@ -1451,18 +1335,6 @@ h1.title.in-md {
   }
 }
 
-@media screen and (max-width: $desktop) {
-  .quick-nav-cards {
-    .inner {
-      display: block;
-      a {
-        display: block;
-        padding: 5px;
-      }
-    }
-  }
-}
-
 /**************/
 /* HOME CARDS */
 /**************/
@@ -1472,8 +1344,8 @@ h1.title.in-md {
     min-height: 150px;
     h2 {
       font: {
-        family: 'Cabinet Grotesk', sans-serif;
-        weight: 700;
+        family: 'Hanken Grotesk', sans-serif;
+        weight: 600;
       }
     }
     .content {
@@ -1487,32 +1359,12 @@ h1.title.in-md {
   }
 }
 
-@media screen and (max-width: 1800px) {
-  .home-cards {
-    .card-content {
-      min-height: 200px;
-    }
-  }
-}
-
-@media screen and (max-width: $desktop) {
-  .home-cards {
-    .card-content {
-      min-height: auto;
-    }
-  }
-}
-
 .home-card, .home-card figure, .home-card img {
   border-radius: 16px;
 }
 
 .home-card-link:after {
   display: inline-block;
-  //-webkit-transform: scale(0.5, 1); /* Safari and Chrome */
-  //-moz-transform: scale(0.5, 1); /* Firefox */
-  //-ms-transform: scale(0.5, 1); /* IE 9 */
-  //-o-transform: scale(0.5, 1); /* Opera */
   transform: scale(0.5, 1); /* W3C */
   content: "\25BA";
   position: relative;
@@ -1578,18 +1430,6 @@ h1.title.in-md {
       text-align: center;
       a.external-link {
         padding-right: 5px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: $desktop) {
-  .bgee-resource-archive {
-    margin: 6rem 0;
-    .columns {
-      display: block;
-      .column {
-        margin: 10px 0;
       }
     }
   }
@@ -1664,7 +1504,215 @@ h1.title.in-md {
   }
 }
 
+/* MEDIA QUERIES */
+
+@media screen and (min-width: $xlscreen) {
+  .home-hero-banner {
+    .hero-body {
+      h1 {
+        font: {
+          size: 2.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .navbar-end {
+      align-items: center !important;
+  }
+}
+
+@media screen and (max-width: $xxlscreen) {
+  .home-cards {
+    .card-content {
+      min-height: 150px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1092px) and (max-width: 1313px) {
+  .home-cards {
+    .card-content {
+      min-height: 159px;
+      h2 {
+        font: { 
+          size: 2rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .navbar-item {
+    padding: 0 5px !important;
+    font: {
+      size: .9rem;
+    }
+  }
+}
+
 @media screen and (max-width: $desktop) {
+
+  .column.is-6, .column.is-6-tablet {
+    width: 100%;
+  }
+  .columns:not(.is-desktop) {
+    flex-direction: column;
+  }
+
+  $navbar-background-color: $dark-bg-color;
+  $navbar-item-color: $light-color;
+  $navbar-dropdown-arrow: $light-color;
+
+  .navbar {
+    padding: 10px;
+    .navbar-burger {
+      span {
+        width: 22px;
+        height: 3px;
+        border-radius: 4px;
+        &:nth-child(2) {
+          top: calc(50% + 1px);
+          left: calc(50% - 3px);
+        }
+        &:nth-child(3) {
+          top: calc(50% + 8px);
+        }
+      }
+      &:hover {
+        color: $light-color !important;
+      }
+    }
+
+    img.logo {
+      width: 99px;
+      max-width: 99px;
+      height: 50px;
+      max-height: 50px;
+    }
+
+    .navbar-menu {
+      background-color: $dark-bg-color !important;
+      border-radius: 8px;
+      &.is-active {
+        margin: 10px 0px;
+        padding: 20px 0px;
+        button {
+          margin: 0 0 10px 10px;
+          padding: 10px !important;
+        }
+        .navbar-start {
+          .navbar-item {
+            padding: 10px !important;
+            font: {
+              size: 1rem;
+            }
+            color: $light-color;
+          }
+        }
+        .navbar-end {
+          display: flex;
+          margin: 10px 0 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          a {
+            padding: 10px 0 0;
+            .logo-associations {
+              img {
+                width: 139px;
+                margin: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .navbar-item.has-dropdown {
+      .navbar-link {
+        &:hover,
+        &.active {
+          background-color: $dark-bg-hover-color;
+          color: $light-color;
+        }
+        &::after {
+          transition: 0.3s;
+          border-color: $light-color !important;
+        }
+      }
+      .navbar-dropdown {
+        display: none;
+        .custom.navbar-item {
+          color: $dark-font-color !important;
+          &:hover {
+            background-color: $dark-bg-hover-color;
+            color: $light-color !important;
+          }
+        }
+      }
+      &.is-open {
+        .navbar-link {
+          background-color: $dark-bg-hover-color;
+          color: $light-color;
+          &::after {
+            transform: rotate(135deg);
+            transition: 0.3s;
+          }
+        }
+        .navbar-dropdown {
+          display: block;
+        }
+      }
+    }
+    .navbar-end {
+      align-items: center !important;
+    }
+    .navbar-end > a.navbar-item:hover {
+      background-color: $text !important;
+    }
+  }
+  
+  .home-hero-banner {
+    .hero-body {
+      .has-text-right {
+        text-align: start !important;
+      }
+      .gene-search {
+        display: inline-block;
+      }
+      .hero-data-columns {
+        display: flex;
+      }
+    }
+  }
+
+  .quick-nav-cards {
+    .inner {
+      display: block;
+      a {
+        display: block;
+        padding: 5px;
+      }
+    }
+  }
+
+  .home-cards {
+    .card-content {
+      min-height: auto;
+    }
+  }
+
+  .bgee-resource-archive {
+    margin: 6rem 0;
+    .columns {
+      display: block;
+      .column {
+        margin: 10px 0;
+      }
+    }
+  }
+
   .footer {
     & > div {
       flex-direction: column;
@@ -1717,6 +1765,93 @@ h1.title.in-md {
   }
 }
 
+@media only screen and (min-width: $tablet) {
+  #modal .modal-card {
+    max-height: 75vh;
+  }
+}
+
+@media only screen and (max-width: $tablet) {
+  .section {
+    padding: 1rem 0rem;
+  }
+  #helpers-top-anat {
+    flex-direction: column;
+    & > *:not(:first-child) {
+      margin-top: 0.5rem;
+    }
+  }
+  .species-grid {
+    .expression-species {
+      .image-container {
+        display: none;
+      }
+    }
+  }
+  #home-species-wrapper .selection.fullwidth {
+    flex-direction: column !important;
+    height: auto;
+    padding: 1rem;
+    & > *:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+  .field.has-addons {
+    flex-direction: column;
+    & a.button {
+      border-radius: 4px !important;
+    }
+  }
+  #gene-wrapper {
+    flex-direction: column;
+    .sidebar {
+      display: none;
+      width: auto;
+      margin-right: 0;
+      .side-menu {
+        width: auto;
+        height: auto;
+
+        .side-menu-wrapper {
+          position: relative;
+          width: auto;
+
+          .menu {
+            display: none;
+          }
+        }
+      }
+    }
+
+    #gene-body {
+      margin-top: 1rem;
+      .head {
+        flex-direction: column;
+        .content {
+          margin-top: 1rem;
+          margin-left: 0;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .menu-modal-card {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .tablet-flex-direction-column {
+    flex-direction: column-reverse !important;
+    & > * {
+      margin: 5px 0;
+    }
+  }
+}
+
 @media screen and (max-width: $smallestscreen) {
   /* GENERAL */
   .section {
@@ -1764,6 +1899,7 @@ h1.title.in-md {
   }
   /* RESOURCE AND ARCHIVE */
   .bgee-resource-archive {
+    margin: 0;
     .columns {
       div {
         .archived-link {

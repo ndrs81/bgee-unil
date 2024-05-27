@@ -183,11 +183,12 @@ const Home = () => {
                   Data retrieval
                 </h2>
                 <div className="content">
-                  <p>How to retrieve data.</p>
-                  <Link to={PATHS.DOWNLOAD.GENE_EXPRESSION_CALLS} className="home-card-link">Expression calls download files</Link>
-                  <Link to={PATHS.DOWNLOAD.PROCESSED_EXPRESSION_VALUES} className="home-card-link">Expression values download files</Link>
-                  <Link to={PATHS.RESOURCES.R_PACKAGES} className="home-card-link">R packages</Link>
-                  <a href={PATHS.SEARCH.SPARQL} target="_blank" rel="noopener noreferrer" className="home-card-link">SPARQL endpoint</a>
+                  <p>How to retrieve data.&nbsp;
+                    <Link to={PATHS.DOWNLOAD.GENE_EXPRESSION_CALLS} className="home-card-link">Expression calls download files</Link>
+                    <Link to={PATHS.DOWNLOAD.PROCESSED_EXPRESSION_VALUES} className="home-card-link">Expression values download files</Link>
+                    <Link to={PATHS.RESOURCES.R_PACKAGES} className="home-card-link">R packages</Link>
+                    <a href={PATHS.SEARCH.SPARQL} target="_blank" rel="noopener noreferrer" className="home-card-link">SPARQL endpoint</a>
+                  </p>
                 </div>
               </Bulma.Card.Body>
               <div className="home-card-footer">

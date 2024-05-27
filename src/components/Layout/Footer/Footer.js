@@ -170,7 +170,7 @@ const Footer = () => {
             href="https://www.sib.swiss/"
             target="_blank"
             rel="noopener noreferrer"
-            className="dflex"
+            className="is-flex is-align-items-center"
           >
             <Bulma.Image
               className="no-responsive"
